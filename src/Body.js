@@ -4,7 +4,7 @@ import "./Body.css"; // Import the CSS file
 class Body extends Component {
     constructor() {
         super();
-        this.url = "http://api.open-notify.org/iss-now.json";
+        this.url = "https://api.open-notify.org/iss-now.json";
 
         this.state = {
             coords: {
