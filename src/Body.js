@@ -4,8 +4,8 @@ import "./Body.css"; // Import the CSS file
 class Body extends Component {
     constructor() {
         super();
-        this.url = "https://api.open-notify.org/iss-now.json";
-
+        // this.url = "http://api.open-notify.org/iss-now.json";
+        this.url = "https://api.wheretheiss.at/v1/satellites/25544";
         this.state = {
             coords: {
                 latitude: "",
@@ -21,8 +21,8 @@ class Body extends Component {
     getData = async function () {
         const response = await fetch(this.url);
         const data = await response.json();
-        const latitude = data.iss_position.latitude;
-        const longitude = data.iss_position.longitude;
+        const latitude = data.latitude;
+        const longitude = data.longitude;
 
         this.setState({
             coords: {
